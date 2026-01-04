@@ -23,3 +23,5 @@ dist/
 
 cmd/fs/fs
 
+cmd/socket_server/socket_server
+cmd/socket_server/socket_server/server/server
