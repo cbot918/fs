@@ -1,0 +1,1308 @@
+{
+  "components": {
+    "schemas": {
+      "types.Column": {
+        "properties": {
+          "exp": {
+            "description": "expressions, which default to = when the value is null, have =, !=, \u003e, \u003e=, \u003c, \u003c=, like",
+            "type": "string"
+          },
+          "logic": {
+            "description": "logical type, default value is \"and\", support \u0026, and, ||, or",
+            "type": "string"
+          },
+          "name": {
+            "description": "column name",
+            "type": "string"
+          },
+          "value": {
+            "description": "column value"
+          }
+        },
+        "type": "object"
+      },
+      "types.CreateItemReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "id": {
+                "description": "id",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.CreateItemRequest": {
+        "properties": {
+          "attack": {
+            "type": "integer"
+          },
+          "classifier": {
+            "type": "string"
+          },
+          "con": {
+            "type": "integer"
+          },
+          "cor": {
+            "type": "integer"
+          },
+          "defence": {
+            "type": "integer"
+          },
+          "dex": {
+            "type": "integer"
+          },
+          "dodge": {
+            "type": "integer"
+          },
+          "hp": {
+            "type": "integer"
+          },
+          "inte": {
+            "type": "integer"
+          },
+          "itemCname": {
+            "type": "string"
+          },
+          "itemDesc": {
+            "type": "string"
+          },
+          "itemID": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "kar": {
+            "type": "integer"
+          },
+          "mp": {
+            "type": "integer"
+          },
+          "str": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "types.CreateMobReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "id": {
+                "description": "id",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.CreateMobRequest": {
+        "properties": {
+          "attack": {
+            "type": "integer"
+          },
+          "attackable": {
+            "type": "boolean"
+          },
+          "defence": {
+            "type": "integer"
+          },
+          "dodge": {
+            "type": "integer"
+          },
+          "hp": {
+            "type": "integer"
+          },
+          "mobCname": {
+            "type": "string"
+          },
+          "mobDesc": {
+            "type": "string"
+          },
+          "mobID": {
+            "type": "string"
+          },
+          "mobName": {
+            "type": "string"
+          },
+          "mp": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "types.CreateRoomReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.CreateRoomRequest": {
+        "properties": {
+          "desc": {
+            "type": "string"
+          },
+          "mobs": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "way": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.DeleteItemByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.DeleteMobByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.DeleteRoomByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.GetItemByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "item": {
+                "$ref": "#/components/schemas/types.ItemObjDetail"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.GetMobByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "mob": {
+                "$ref": "#/components/schemas/types.MobObjDetail"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.GetRoomByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "room": {
+                "$ref": "#/components/schemas/types.RoomObjDetail"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.ItemObjDetail": {
+        "properties": {
+          "attack": {
+            "type": "integer"
+          },
+          "classifier": {
+            "type": "string"
+          },
+          "con": {
+            "type": "integer"
+          },
+          "cor": {
+            "type": "integer"
+          },
+          "defence": {
+            "type": "integer"
+          },
+          "dex": {
+            "type": "integer"
+          },
+          "dodge": {
+            "type": "integer"
+          },
+          "hp": {
+            "type": "integer"
+          },
+          "id": {
+            "description": "convert to uint64 id",
+            "type": "integer"
+          },
+          "inte": {
+            "type": "integer"
+          },
+          "itemCname": {
+            "type": "string"
+          },
+          "itemDesc": {
+            "type": "string"
+          },
+          "itemID": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "kar": {
+            "type": "integer"
+          },
+          "mp": {
+            "type": "integer"
+          },
+          "str": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "types.ListItemsReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "items": {
+                "items": {
+                  "$ref": "#/components/schemas/types.ItemObjDetail"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.ListMobsReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "mobs": {
+                "items": {
+                  "$ref": "#/components/schemas/types.MobObjDetail"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.ListRoomsReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "properties": {
+              "rooms": {
+                "items": {
+                  "$ref": "#/components/schemas/types.RoomObjDetail"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.MobObjDetail": {
+        "properties": {
+          "attack": {
+            "type": "integer"
+          },
+          "attackable": {
+            "type": "boolean"
+          },
+          "defence": {
+            "type": "integer"
+          },
+          "dodge": {
+            "type": "integer"
+          },
+          "hp": {
+            "type": "integer"
+          },
+          "id": {
+            "description": "convert to uint64 id",
+            "type": "integer"
+          },
+          "mobCname": {
+            "type": "string"
+          },
+          "mobDesc": {
+            "type": "string"
+          },
+          "mobID": {
+            "type": "string"
+          },
+          "mobName": {
+            "type": "string"
+          },
+          "mp": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "types.Params": {
+        "properties": {
+          "columns": {
+            "description": "query conditions",
+            "items": {
+              "$ref": "#/components/schemas/types.Column"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "description": "lines per page",
+            "type": "integer"
+          },
+          "page": {
+            "description": "page number, starting from page 0",
+            "type": "integer"
+          },
+          "sort": {
+            "description": "sorted fields, multi-column sorting separated by commas",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.RoomObjDetail": {
+        "properties": {
+          "desc": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "mobs": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "way": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.UpdateItemByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.UpdateItemByIDRequest": {
+        "properties": {
+          "attack": {
+            "type": "integer"
+          },
+          "classifier": {
+            "type": "string"
+          },
+          "con": {
+            "type": "integer"
+          },
+          "cor": {
+            "type": "integer"
+          },
+          "defence": {
+            "type": "integer"
+          },
+          "dex": {
+            "type": "integer"
+          },
+          "dodge": {
+            "type": "integer"
+          },
+          "hp": {
+            "type": "integer"
+          },
+          "id": {
+            "description": "uint64 id",
+            "type": "integer"
+          },
+          "inte": {
+            "type": "integer"
+          },
+          "itemCname": {
+            "type": "string"
+          },
+          "itemDesc": {
+            "type": "string"
+          },
+          "itemID": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "kar": {
+            "type": "integer"
+          },
+          "mp": {
+            "type": "integer"
+          },
+          "str": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "types.UpdateMobByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.UpdateMobByIDRequest": {
+        "properties": {
+          "attack": {
+            "type": "integer"
+          },
+          "attackable": {
+            "type": "boolean"
+          },
+          "defence": {
+            "type": "integer"
+          },
+          "dodge": {
+            "type": "integer"
+          },
+          "hp": {
+            "type": "integer"
+          },
+          "id": {
+            "description": "uint64 id",
+            "type": "integer"
+          },
+          "mobCname": {
+            "type": "string"
+          },
+          "mobDesc": {
+            "type": "string"
+          },
+          "mobID": {
+            "type": "string"
+          },
+          "mobName": {
+            "type": "string"
+          },
+          "mp": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "types.UpdateRoomByIDReply": {
+        "properties": {
+          "code": {
+            "description": "return code",
+            "type": "integer"
+          },
+          "data": {
+            "description": "return data",
+            "type": "object"
+          },
+          "msg": {
+            "description": "return information description",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "types.UpdateRoomByIDRequest": {
+        "properties": {
+          "desc": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "mobs": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "way": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "description": "Type Bearer your-jwt-token to Value",
+        "in": "header",
+        "name": "Authorization",
+        "type": "apiKey"
+      }
+    }
+  },
+  "info": {
+    "contact": {},
+    "description": "http server api docs",
+    "title": "fs api docs",
+    "version": "v1.0.0"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/api/v1/item": {
+      "post": {
+        "description": "Creates a new item entity using the provided data in the request body.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.CreateItemRequest"
+              }
+            }
+          },
+          "description": "item information",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.CreateItemReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Create a new item",
+        "tags": [
+          "item"
+        ]
+      }
+    },
+    "/api/v1/item/list": {
+      "post": {
+        "description": "Returns a paginated list of item based on query filters, including page number and size.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.Params"
+              }
+            }
+          },
+          "description": "query parameters",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.ListItemsReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get a paginated list of items by custom conditions",
+        "tags": [
+          "item"
+        ]
+      }
+    },
+    "/api/v1/item/{id}": {
+      "delete": {
+        "description": "Deletes a existing item identified by the given id in the path.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.DeleteItemByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Delete a item by id",
+        "tags": [
+          "item"
+        ]
+      },
+      "get": {
+        "description": "Gets detailed information of a item specified by the given id in the path.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.GetItemByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get a item by id",
+        "tags": [
+          "item"
+        ]
+      },
+      "put": {
+        "description": "Updates the specified item by given id in the path, support partial update.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.UpdateItemByIDRequest"
+              }
+            }
+          },
+          "description": "item information",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.UpdateItemByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Update a item by id",
+        "tags": [
+          "item"
+        ]
+      }
+    },
+    "/api/v1/mob": {
+      "post": {
+        "description": "Creates a new mob entity using the provided data in the request body.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.CreateMobRequest"
+              }
+            }
+          },
+          "description": "mob information",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.CreateMobReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Create a new mob",
+        "tags": [
+          "mob"
+        ]
+      }
+    },
+    "/api/v1/mob/list": {
+      "post": {
+        "description": "Returns a paginated list of mob based on query filters, including page number and size.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.Params"
+              }
+            }
+          },
+          "description": "query parameters",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.ListMobsReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get a paginated list of mobs by custom conditions",
+        "tags": [
+          "mob"
+        ]
+      }
+    },
+    "/api/v1/mob/{id}": {
+      "delete": {
+        "description": "Deletes a existing mob identified by the given id in the path.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.DeleteMobByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Delete a mob by id",
+        "tags": [
+          "mob"
+        ]
+      },
+      "get": {
+        "description": "Gets detailed information of a mob specified by the given id in the path.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.GetMobByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get a mob by id",
+        "tags": [
+          "mob"
+        ]
+      },
+      "put": {
+        "description": "Updates the specified mob by given id in the path, support partial update.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.UpdateMobByIDRequest"
+              }
+            }
+          },
+          "description": "mob information",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.UpdateMobByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Update a mob by id",
+        "tags": [
+          "mob"
+        ]
+      }
+    },
+    "/api/v1/room": {
+      "post": {
+        "description": "Creates a new room entity using the provided data in the request body.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.CreateRoomRequest"
+              }
+            }
+          },
+          "description": "room information",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.CreateRoomReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Create a new room",
+        "tags": [
+          "room"
+        ]
+      }
+    },
+    "/api/v1/room/list": {
+      "post": {
+        "description": "Returns a paginated list of rooms based on query filters, including page number and size.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.Params"
+              }
+            }
+          },
+          "description": "query parameters",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.ListRoomsReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get a paginated list of rooms by custom conditions",
+        "tags": [
+          "room"
+        ]
+      }
+    },
+    "/api/v1/room/{id}": {
+      "delete": {
+        "description": "Deletes a existing room identified by the given id in the path.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.DeleteRoomByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Delete a room by id",
+        "tags": [
+          "room"
+        ]
+      },
+      "get": {
+        "description": "Gets detailed information of a room specified by the given id in the path.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.GetRoomByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Get a room by id",
+        "tags": [
+          "room"
+        ]
+      },
+      "put": {
+        "description": "Updates the specified room by given id in the path, support partial update.",
+        "parameters": [
+          {
+            "description": "id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/types.UpdateRoomByIDRequest"
+              }
+            }
+          },
+          "description": "room information",
+          "required": true,
+          "x-originalParamName": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/types.UpdateRoomByIDReply"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Update a room by id",
+        "tags": [
+          "room"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/"
+    },
+    {
+      "url": "https://localhost:8080/"
+    }
+  ]
+}
